@@ -47,3 +47,5 @@ To get started with the project, follow these steps:
    ```
    npm start
    ```
+
+Note: I am aware that the .env file in the backend folder is exposed. I have intentionally left it that way so you can easily test the application in your local environment.
