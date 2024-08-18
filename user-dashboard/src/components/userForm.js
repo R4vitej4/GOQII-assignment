@@ -2,7 +2,7 @@ import React, { useState }  from 'react';
 import Input from './input';
 import Button from './Button';
 
-const UserForm = ({ formData, handleInputChange, handleSubmit }) => {
+const UserForm = ({ formData, handleInputChange, handleSubmit, isEditing }) => {
     const [error, setError] = useState('');
 
     const validateDateOfBirth = (date) => {
@@ -23,6 +23,7 @@ const UserForm = ({ formData, handleInputChange, handleSubmit }) => {
         }
         handleInputChange(e);
     };
+
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
             <Input
@@ -59,8 +60,9 @@ const UserForm = ({ formData, handleInputChange, handleSubmit }) => {
             />
             {error && <p className="text-red-500">{error}</p>}
             <Button type="submit" className="bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500">
-                Create User
+                {isEditing ? 'Update User' : 'Create User'}
             </Button>
+            
         </form>
     );
 };

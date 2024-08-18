@@ -38,7 +38,7 @@ router.get('/user/all', (req, res, next) => {
 });
 
 // Get User by ID
-router.get('/user/:id', async (req, res, next) => {
+router.get('/user/:id', (req, res, next) => {
   const { id } = req.params;
   try {
     connection.query('SELECT * FROM Users WHERE id = ?', [id],(err,result)=>{
@@ -57,7 +57,7 @@ router.get('/user/:id', async (req, res, next) => {
 });
 
 // Update User
-router.put('/user/:id', async (req, res, next) => {
+router.put('/user/:id', (req, res, next) => {
   const { id } = req.params;
   const { name, email, password, dob } = req.body;
   try {
@@ -79,7 +79,7 @@ router.put('/user/:id', async (req, res, next) => {
 });
 
 // Delete User
-router.delete('/user/:id', async (req, res,next) => {
+router.delete('/user/:id', (req, res,next) => {
   const { id } = req.params;
   try {
     connection.query('DELETE FROM Users WHERE id = ?', [id],(err,result)=>{
