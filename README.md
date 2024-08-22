@@ -37,7 +37,7 @@ To get started with the project, follow these steps:
 4. **Start the Backend Server**: In the `backend` folder, start the development server using npm:
 
    ```
-   nodemon index.js 
+   node index.js 
    
    will run at port 8000 in local
    ```
